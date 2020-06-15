@@ -2,140 +2,53 @@
 layout: default
 ---
 
+<div class="usa-prose">
+<h1>Share your vacation experience</h1>
 
-<h1>Sample form</h1>
+<p class="usa-intro">Create a photo album of your most recent vacation to share with your friends.</p>
+</div>
+<form class="usa-form">
 
-<p>You can find this project on <a href="https://github.com/jaredcunha/html-prototype">GitHub</a></p>
 
-<form class="">
 
   <fieldset class="usa-fieldset margin-top-5">
-    <legend class="usa-legend">Inputs</legend>
+    <legend class="usa-legend usa-sr-only">Inputs</legend>
 
     {% include form-fields/_text-field.html
-      id="first_name"
-      label_text="First name"
-      hint="This is what people call you"
+      id="album_title"
+      label_text="Album name"
     %}
 
-    {% include form-fields/_text-field.html
-      id="last_name"
-      label_text="Last name"
-    %}
-
-    {% include form-fields/_text-field.html
-      id="favorite_food"
-      label_text="Favorite food"
-      disabled="true"
-      input_value="burgers"
-    %}
-  </fieldset>
-
-  <fieldset class="usa-fieldset margin-top-5">
-    <legend class="usa-legend">Radios</legend>
-
-    {% include form-fields/_radio.html
-      name="radio_group"
-      id="radio_1"
-      label_text="Option without a follow up"
-    %}
-
-    {% include form-fields/_radio.html
-      name="radio_group"
-      id="radio_2"
-      label_text="Option with a followup"
-      follow_up="followup1"
-      follow_up_optional="true"
-    %}
-
-    <div class="usa-form-followup" id="followup1" hidden>
-      {% include form-fields/_text-field.html
-        id="specify"
-        label_text="Specify"
-        disabled="true"
-        optional="true"
-      %}
-
+    <div class="usa-dropzone margin-top-5">
+      <label class="usa-label" for="photos">Add your photos</label>
+        <div class="usa-dropzone__target">
+          <span class="usa-dropzone__instructions" aria-hidden="true">Drag files here or <span class="usa-dropzone__choose">choose from folder</span></span>
+          <div class="usa-dropzone__box"></div>
+          <input id="photos" class="usa-dropzone__input" multiple type="file" name=""/>
+        </div>
     </div>
 
-  </fieldset>
+    <div class="usa-date-picker-range margin-top-5">
+      <div class="usa-form-group">
+        <label class="usa-label" for="appointment-date-start">Vacaction start date</label>
+        <div class="usa-hint">mm/dd/yyyy</div>
+        <div class="usa-date-picker">
+          <input class="usa-input" id="appointment-date-start" name="appointment-date-start" type="text">
+        </div>
+      </div>
 
-
-  <fieldset class="usa-fieldset margin-top-5">
-    <legend class="usa-legend">Checkbox</legend>
-
-    {% include form-fields/_checkbox.html
-      name="checkbox_group"
-      id="checkbox_1"
-      label_text="Checkbox without a follow up"
-    %}
-
-    {% include form-fields/_checkbox.html
-      name="checkbox_group"
-      id="checkbox_2"
-      label_text="Checkbox with a required followup"
-      follow_up="followup2"
-      follow_up_optional="true"
-    %}
-
-    <div class="usa-form-followup" id="followup2" hidden>
-      {% include form-fields/_text-field.html
-        id="specify2"
-        label_text="Specify"
-        disabled="true"
-      %}
-
+      <div class="usa-form-group">
+        <label class="usa-label" for="appointment-date-end">Vacation end date</label>
+        <div class="usa-hint">mm/dd/yyyy</div>
+        <div class="usa-date-picker" data-disable-hide-on-blur>
+          <input class="usa-input" id="appointment-date-end" name="appointment-date-end" type="text">
+        </div>
+      </div>
     </div>
-
   </fieldset>
-
-  <fieldset class="usa-fieldset margin-top-5">
-    <legend class="usa-legend">Select boxes</legend>
-
-    {% include form-fields/_select.html
-      id="basic_select"
-      label_text="Basic select box"
-      options=" | Option 1 | Option 2"
-    %}
-
-    {% include form-fields/_select.html
-      id="title"
-      label_text="Select box with followup"
-      options=" | Mr. | Mrs. | Ms. | Dr. | Other (Please specify)"
-      optional="true"
-      follow_up="followup_select"
-      follow_up_optional="true"
-      follow_up_option="Other (Please specify)"
-    %}
-
-    <div class="usa-form-followup" id="followup_select" hidden>
-      {% include form-fields/_text-field.html
-        id="specify_select"
-        label_text="Specify"
-        disabled="true"
-      %}
-    </div>
-
-    {% include form-fields/_state-select.html
-      id="some_state"
-    %}
-  </fieldset>
-
-  <fieldset class="usa-fieldset margin-top-5">
-    <legend class="usa-legend">Text area</legend>
-
-
-  {% include form-fields/_text-area.html
-    id="textarea"
-    label_text="Write something"
-    hint="Anything"
-    optional="true"
-  %}
-  </fieldset>
-
 
   <div class="margin-top-5">
-    <button type="submit" name="button" class="usa-button">Submit</button>
+    <button type="submit" name="button" class="usa-button">Create album</button>
   </div>
 
 </form>
