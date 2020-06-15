@@ -13,7 +13,7 @@ There are a couple ways to update the USWDS:
 
 This site uses custom USWDS theme settings in `./assets/uswds-theme`. Use this if you want to include or remove utilities or update utility settings.
 
-1. Compile usds.css `gulp uswds-build-sass`
+1. Compile usds.css `gulp build-sass`
 2. Run jekyll `bundle exec jekyll serve`
 
 
@@ -22,7 +22,7 @@ This site uses custom USWDS theme settings in `./assets/uswds-theme`. Use this i
 Use this to patch any display bugs through updates to USWDS.
 
 1. Install the package `npm install --save-dev *new-USWDS-version-number*`
-2. Compile usds.css `gulp uswds-build-sass`
+2. Compile usds.css `gulp build-sass`
 3. Run jekyll `bundle exec jekyll serve`
 
 #### Update USDS and get new functions and tokens for use in usds.gov project files
@@ -31,7 +31,7 @@ This will will update some of the scss files in `./assets/uswds-sass`, but will 
 
 1. Install the package `npm install --save-dev *new-USWDS-version-number*`
 2. Run `gulp update`
-3. Compile usds.css `gulp uswds-build-sass`
+3. Compile usds.css `gulp build-sass`
 4. Run Jekyll `bundle exec jekyll serve`
 
 ## How the prototype scripting works
